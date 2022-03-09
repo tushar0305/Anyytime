@@ -10,6 +10,6 @@ services:
     build: ./nginx
     container_name: nginx
     environment:
-      - SERVER_NAME=0.0.0.0
+      - SERVER_NAME=3.223.101.105
     restart: always
     network_mode: host
