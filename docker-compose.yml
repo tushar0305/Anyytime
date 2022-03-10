@@ -2,7 +2,7 @@ version: '3'
 
 services:
   flaskapp:
-    build: ./flaskappdoc
+    build: ./flaskapp
     container_name: flaskapp
     networks:
       - backend
