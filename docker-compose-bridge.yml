@@ -2,14 +2,21 @@ version: '3'
 
 services:
   flaskapp:
-    build: ./flaskapp-docker
+    build: ./flaskapp
     container_name: flaskapp
-    network_mode: host
+    networks:
+      - backend
 
   nginx:
     build: ./nginx
-    container_name: nginx
     environment:
       - SERVER_NAME=3.223.101.105
     restart: always
-    network_mode: host
+    ports:
+      - "80:80"
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
